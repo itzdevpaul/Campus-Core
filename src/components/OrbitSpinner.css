@@ -1,0 +1,116 @@
+.orbit-spinner-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.orbit-spinner {
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+
+.orbit-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0ea5e9, #3f19e6);
+  box-shadow: 0 0 12px rgba(14, 165, 233, 0.6);
+  animation: orbit-pulse 1.5s ease-in-out infinite;
+}
+
+.orbit-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.orbit-ring-1 {
+  width: 64px;
+  height: 64px;
+  margin: -32px 0 0 -32px;
+  animation: orbit-rotate 2s linear infinite;
+}
+
+.orbit-ring-2 {
+  width: 44px;
+  height: 44px;
+  margin: -22px 0 0 -22px;
+  animation: orbit-rotate 1.4s linear infinite reverse;
+}
+
+.orbit-ring-3 {
+  width: 24px;
+  height: 24px;
+  margin: -12px 0 0 -12px;
+  animation: orbit-rotate 0.9s linear infinite;
+}
+
+.orbit-orb {
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  margin-left: -4px;
+  border-radius: 50%;
+}
+
+.orb-1 {
+  background: #0ea5e9;
+  box-shadow: 0 0 8px #0ea5e9;
+}
+
+.orb-2 {
+  background: #3f19e6;
+  box-shadow: 0 0 8px #6366f1;
+}
+
+.orb-3 {
+  background: #10b981;
+  box-shadow: 0 0 6px #10b981;
+}
+
+.orbit-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted, #8892a8);
+  letter-spacing: 0.02em;
+}
+
+.orbit-fullpage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--bg, #0a0e1a);
+}
+
+@keyframes orbit-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orbit-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
+}
+
+/* Inline mini version */
+.orbit-spinner.mini {
+  width: 28px;
+  height: 28px;
+}
+
+.orbit-spinner.mini .orbit-ring-1 { width: 28px; height: 28px; margin: -14px 0 0 -14px; }
+.orbit-spinner.mini .orbit-ring-2 { width: 18px; height: 18px; margin: -9px 0 0 -9px; }
+.orbit-spinner.mini .orbit-ring-3 { width: 10px; height: 10px; margin: -5px 0 0 -5px; }
+.orbit-spinner.mini .orbit-core { width: 6px; height: 6px; margin: -3px 0 0 -3px; }
+.orbit-spinner.mini .orbit-orb { width: 4px; height: 4px; margin-left: -2px; top: -2px; }
